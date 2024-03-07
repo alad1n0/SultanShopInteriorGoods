@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  Breadcrumbs as MUIBreadcrumbs,
+  Link,
+  Typography,
+} from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import './_Breadcrumbs.scss';
 
@@ -12,7 +17,9 @@ const Breadcrumbs = (props) => {
     if (pathname.includes('product')) {
       return props.productTitle;
     } else if (pathname.includes('cart')) {
-      return 'Кошик';
+      return 'Корзина';
+    } else if (pathname.includes('admin')) {
+      return 'Админ-панель';
     }
   }
 
@@ -32,30 +39,33 @@ const Breadcrumbs = (props) => {
 
   return (
       !pathname.includes('sultan-shop_for_internship') && (
-          <div className="breadcrumbsCustomStyle" aria-label="breadcrumb">
+          <MUIBreadcrumbs
+              className="breadcrumbsCustomStyle"
+              aria-label="breadcrumb"
+          >
             {pathnames.length > 0 ? (
-                <button className="breadcrumbs" onClick={updateProductsHandler}>
-                  Каталог
-                </button>
+                <Link to="/" onClick={updateProductsHandler}>
+                  <p className="breadcrumbs breadcrumbs_active">Каталог</p>
+                </Link>
             ) : (
-                <div className="breadcrumbs">
-                  Каталог <span>Товари для інтер'єру</span>
-                </div>
+                <Typography className="breadcrumbs">
+                  Каталог <span>Косметика и гигиена</span>
+                </Typography>
             )}
             {pathnames.map((name, index) => {
               const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
               const isLast = index === pathnames.length - 1;
               return isLast ? (
-                  <div className="breadcrumbs-next" key={name}>
+                  <Typography className="breadcrumbs-next" key={name}>
                     {breadcrumbTitle()}
-                  </div>
+                  </Typography>
               ) : (
-                  <button key={name} onClick={() => history.push(routeTo)}>
+                  <Link key={name} onClick={() => history.push(routeTo)}>
                     {breadcrumbTitle()}
-                  </button>
+                  </Link>
               );
             })}
-          </div>
+          </MUIBreadcrumbs>
       )
   );
 };

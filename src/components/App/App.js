@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Catalog from '../Catalog/Catalog';
 import ProductCard from '../ProductCard/ProductCard';
+import StartPage from '../StartPage/StartPage';
 import Cart from '../Cart/Cart';
 import OrderPopup from '../OrderPopup/OrderPopup';
 import {
@@ -21,7 +22,6 @@ import {
   getProductsMinPrice,
 } from '../../utils/getProductsData.js';
 import getAllProducts from '../../utils/getAllProducts.js';
-import StartPage from "../StartPage/StartPage";
 
 function App() {
   const allProducts = getAllProducts();
@@ -70,11 +70,11 @@ function App() {
     setId(item.id);
     setProductTitle(`${item.brand} ${item.title}`);
     localStorage.setItem(
-      'productCardLocal',
-      JSON.stringify({
-        id: item.id,
-        title: `${item.brand} ${item.title}`,
-      })
+        'productCardLocal',
+        JSON.stringify({
+          id: item.id,
+          title: `${item.brand} ${item.title}`,
+        })
     );
   }
 
@@ -117,8 +117,8 @@ function App() {
       localStorage.setItem('cart', JSON.stringify(localCart));
       localStorage.setItem('cartCount', cartCountLocal + 1);
       localStorage.setItem(
-        'cartPrice',
-        JSON.stringify(+cartPrice + +cartItem.price)
+          'cartPrice',
+          JSON.stringify(+cartPrice + +cartItem.price)
       );
     }
   }
@@ -218,6 +218,7 @@ function App() {
     localStorage.removeItem('cart');
   }
 
+  // SORT
   function sortProducts(e) {
     if (e.target.value === 'titleAsc') {
       setProducts([...products].sort(sortByTitleAsc));
@@ -232,11 +233,12 @@ function App() {
     }
   }
 
+  // TYPE FILTER
   function typeFilterClick(e) {
     const filteredProducts = [];
     const productsList = document.querySelector('.catalog__products');
     const noResultsMessage = document.querySelector(
-      '.catalog__noResuts-message'
+        '.catalog__noResuts-message'
     );
     productsList.style.display = 'flex';
     noResultsMessage.style.display = 'none';
@@ -267,6 +269,7 @@ function App() {
     });
   }
 
+  // COMMON FILTERS
   function getInputMinPrice(e) {
     setInputPriceMin(e.target.value);
   }
@@ -286,8 +289,8 @@ function App() {
     const vendorsList = document.querySelectorAll('.catalog__checkbox-input');
     vendorsList.forEach((el) => {
       el.checked &&
-        !filterParams.vendors.includes(el.nextSibling.textContent) &&
-        filterParams.vendors.push(el.nextSibling.textContent);
+      !filterParams.vendors.includes(el.nextSibling.textContent) &&
+      filterParams.vendors.push(el.nextSibling.textContent);
     });
 
     if (filterParams.vendors.length < 1) {
@@ -298,9 +301,9 @@ function App() {
 
     allProducts.forEach((el) => {
       if (
-        el.price >= filterParams.priceMin &&
-        el.price <= filterParams.priceMax &&
-        filterParams.vendors.includes(el.vendor)
+          el.price >= filterParams.priceMin &&
+          el.price <= filterParams.priceMax &&
+          filterParams.vendors.includes(el.vendor)
       )
         filteredProducts.push(el);
     });
@@ -309,7 +312,7 @@ function App() {
 
     const productsList = document.querySelector('.catalog__products');
     const noResultsMessage = document.querySelector(
-      '.catalog__noResuts-message'
+        '.catalog__noResuts-message'
     );
 
     if (filteredProducts.length < 1) {
@@ -338,7 +341,7 @@ function App() {
 
   useEffect(() => {
     const productCardLocal = JSON.parse(
-      localStorage.getItem('productCardLocal')
+        localStorage.getItem('productCardLocal')
     );
     if (productCardLocal) {
       setId(productCardLocal.id);
@@ -365,81 +368,87 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="app">
-        <OrderPopup isOrderDone={isOrderDone} />
-        <Favicon url={require('../../styles/images/favicon.png')}></Favicon>
-        <Header
-          count={cartCount}
-          cartPrice={cartPrice}
-          onUpdateProductList={updateProductList}
-        />
-        <main>
-          <Breadcrumbs
-            productTitle={productTitle}
-            onUpdateProductList={updateProductList}
+      <BrowserRouter>
+        <div className="app">
+          <OrderPopup isOrderDone={isOrderDone} />
+          <Favicon url={require('../../styles/images/favicon.png')}></Favicon>
+
+          <Header
+              count={cartCount}
+              cartPrice={cartPrice}
+              onUpdateProductList={updateProductList}
           />
-          <Switch>
-            <Route
-                exact
-                from="/"
-                render={(props) => (
-                    <Catalog
-                        products={products}
-                        inTheBasket={true}
-                        onProductClick={productClick}
-                        onAddProductToCart={addProductToCart}
-                        onCartInc={cartInc}
-                        onCartDec={cartDec}
-                        onSortClick={sortProducts}
-                        onTypeFilterClick={typeFilterClick}
-                        onSubmitFilters={submitFilters}
-                        priceMinInputHandler={getInputMinPrice}
-                        priceMaxInputHandler={getInputMaxPrice}
-                        priceMin={inputPriceMin}
-                        priceMax={inputPriceMax}
-                        onResetFilters={resetFilters}
-                        {...props}
-                    />
-                )}
+
+          <main>
+            <Breadcrumbs
+                productTitle={productTitle}
+                onUpdateProductList={updateProductList}
             />
-            <Route
-              exact
-              from={`/product/${id}`}
-              render={(props) => (
-                <ProductCard
-                  id={id}
-                  onAddProductToCart={addProductToCart}
-                  onCartInc={cartInc}
-                  onCartDec={cartDec}
-                  {...props}
-                />
-              )}
-            />
-            <Route
-              exact
-              from="/cart"
-              render={(props) => (
-                <Cart
-                  products={cartProducts}
-                  totalPrice={cartPrice}
-                  onCartInc={cartInc}
-                  onCartDec={cartDec}
-                  onProductDelete={deleteCartItem}
-                  onProductClick={productClick}
-                  makeOrder={makeOrder}
-                  {...props}
-                />
-              )}
-            />
-            <Route path="/sultanshopinteriorgoods">
-              <StartPage />
-            </Route>
-          </Switch>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+
+            <Switch>
+              <Route
+                  exact
+                  from="/"
+                  render={(props) => (
+                      <Catalog
+                          products={products}
+                          inTheBasket={true}
+                          onProductClick={productClick}
+                          onAddProductToCart={addProductToCart}
+                          onCartInc={cartInc}
+                          onCartDec={cartDec}
+                          onSortClick={sortProducts}
+                          onTypeFilterClick={typeFilterClick}
+                          onSubmitFilters={submitFilters}
+                          priceMinInputHandler={getInputMinPrice}
+                          priceMaxInputHandler={getInputMaxPrice}
+                          priceMin={inputPriceMin}
+                          priceMax={inputPriceMax}
+                          onResetFilters={resetFilters}
+                          {...props}
+                      />
+                  )}
+              />
+
+              <Route
+                  exact
+                  from={`/product/${id}`}
+                  render={(props) => (
+                      <ProductCard
+                          id={id}
+                          onAddProductToCart={addProductToCart}
+                          onCartInc={cartInc}
+                          onCartDec={cartDec}
+                          {...props}
+                      />
+                  )}
+              />
+
+              <Route
+                  exact
+                  from="/cart"
+                  render={(props) => (
+                      <Cart
+                          products={cartProducts}
+                          totalPrice={cartPrice}
+                          onCartInc={cartInc}
+                          onCartDec={cartDec}
+                          onProductDelete={deleteCartItem}
+                          onProductClick={productClick}
+                          makeOrder={makeOrder}
+                          {...props}
+                      />
+                  )}
+              />
+
+              <Route path="/sultanshopinteriorgoods">
+                <StartPage />
+              </Route>
+            </Switch>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
   );
 }
 
