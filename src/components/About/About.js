@@ -1,10 +1,42 @@
 import React from 'react';
-import './_StartPage.scss';
+import './About.css';
 
-function About() {
-  return (
-    <h4>Головна</h4>
-  );
+function AboutPage() {
+    return (
+    <div className="std">
+        <div className="page-title">
+            <h1>Про компанію СУЛТАН</h1>
+        </div>
+        <article id="about_us">
+            <p><b>Наша місія</b> &ndash; створювати комфортні та стильні простори, допомагаючи клієнтам
+                наповнювати Будинки красою, затишком та змістом!</p>
+            <section>
+                <h2>Досвід СУЛТАН</h2>
+                <div className="vert-line line-top">
+                    <div className="h3">Створення першого бутіка компанії СУЛТАН</div>
+                    <div className="margin-left">
+                        <p>З 2006 року ми пройшли довгий шлях:</p>
+                        <div className="long-road">
+                            <div>Від ідеї створення нішевого салону інтер'єрів до <b>становлення
+                                сильного та стильного бренду</b>, який знають, цінують та поважають.
+                            </div>
+                            <div><b>Знають</b> як мережу атмосферних бутиків, що пропонують бездоганну
+                                красу та безкомпромісну якість.
+                            </div>
+                            <div><b>Цінують</b> як компанію, що зарекомендувала себе творцем
+                                індивідуальних інтер'єрних рішень.
+                            </div>
+                            <div><b>Поважають</b> як надійного партнера та відповідального продавця,
+                                завдання якого не просто продати, а й залишити про себе найкраще
+                                враження.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+    );
 }
 
-export default About;
+export default AboutPage;

@@ -7,7 +7,6 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Catalog from '../Catalog/Catalog';
 import ProductCard from '../ProductCard/ProductCard';
-import StartPage from '../StartPage/StartPage';
 import Cart from '../Cart/Cart';
 import OrderPopup from '../OrderPopup/OrderPopup';
 import {
@@ -22,6 +21,9 @@ import {
   getProductsMinPrice,
 } from '../../utils/getProductsData.js';
 import getAllProducts from '../../utils/getAllProducts.js';
+import About from "../About/About";
+import Delivery from "../Delivery/Delivery";
+import Contact from "../Contact/Contact";
 
 function App() {
   const allProducts = getAllProducts();
@@ -379,7 +381,7 @@ function App() {
               onUpdateProductList={updateProductList}
           />
 
-          <main>
+          <mainsultan>
             <Breadcrumbs
                 productTitle={productTitle}
                 onUpdateProductList={updateProductList}
@@ -441,11 +443,19 @@ function App() {
                   )}
               />
 
-              <Route path="/sultanshopinteriorgoods">
-                <StartPage />
+              <Route path="/about">
+                <About />
+              </Route>
+
+              <Route path="/delivery">
+                <Delivery />
+              </Route>
+
+              <Route path="/contact">
+                <Contact />
               </Route>
             </Switch>
-          </main>
+          </mainsultan>
           <Footer />
         </div>
       </BrowserRouter>

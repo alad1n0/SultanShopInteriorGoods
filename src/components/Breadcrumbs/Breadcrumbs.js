@@ -38,19 +38,19 @@ const Breadcrumbs = (props) => {
   }
 
   return (
-      !pathname.includes('sultan-shop_for_internship') && (
+      !pathname.includes('about') && !pathname.includes('delivery') && !pathname.includes('return') && !pathname.includes('contact') && (
           <MUIBreadcrumbs
               className="breadcrumbsCustomStyle"
               aria-label="breadcrumb"
           >
-            {pathnames.length > 0 ? (
+            {pathname === '/' ? (
+                <Typography className="breadcrumbs">
+                  Каталог <span>Товари для інтер'єру</span>
+                </Typography>
+            ) : (
                 <Link to="/" onClick={updateProductsHandler}>
                   <p className="breadcrumbs breadcrumbs_active">Каталог</p>
                 </Link>
-            ) : (
-                <Typography className="breadcrumbs">
-                  Каталог <span>Косметика и гигиена</span>
-                </Typography>
             )}
             {pathnames.map((name, index) => {
               const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;

@@ -1,7 +1,7 @@
 @import '../../styles/scss/mixine-font';
 @import '../../styles/scss/variables';
 
-.header {
+.headers {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -331,7 +331,7 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .header {
+  .headers {
     padding: 14px 30px 45px;
     position: relative;
     max-width: 1200px;
@@ -427,7 +427,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .header {
+  .headers {
     padding: 0;
     &__burger {
       &_open {
@@ -624,7 +624,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  .header {
+  .headers {
     &__burger {
       top: 104px;
       &-container {

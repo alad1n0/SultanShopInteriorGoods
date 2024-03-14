@@ -1,29 +1,32 @@
-@import '../../styles/scss/mixine-font';
-@import '../../styles/scss/variables';
+.page-title,
+.contact-block {
+  margin-bottom: 20px;
+}
 
-.start-page {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 60px 0 150px;
-  & a {
-    color: $colorYellow1;
-    border-bottom: 1px solid transparent;
-    transition: all ease 0.5s;
-    &:hover {
-      border-bottom: 1px solid $colorYellow1;
-    }
-  }
-  &-title {
-    @include font(18px, 600, 24px, $colorGrey1);
-    text-align: center;
-    margin: 0 0 20px;
-    cursor: default;
-  }
-  &-img {
-    background-image: url('../../styles/images/custom-development.png');
-    width: 230px;
-    height: 180px;
-    background-size: cover;
-  }
+.page-title h1,
+.contact-info h2,
+.contact-manager h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.contact-info p,
+.contact-manager p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-block {
+  display: table;
+  width: 100%;
+}
+
+.contact-info,
+.contact-manager {
+  display: table-cell;
+  width: 50%;
+  padding: 0 10px;
+  vertical-align: top;
 }

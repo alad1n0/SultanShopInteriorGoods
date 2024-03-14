@@ -1,7 +1,7 @@
 @import '../../styles/scss/mixine-font';
 @import '../../styles/scss/variables';
 
-.footer {
+.footers {
   z-index: 1;
   background-color: $colorGrey1;
   margin: auto 0 0;
@@ -231,7 +231,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .footer {
+  .footers {
     &__wrapper {
       flex-direction: column;
       align-items: center;
@@ -319,7 +319,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  .footer {
+  .footers {
     &__wrapper {
       padding: 16px 15px;
     }

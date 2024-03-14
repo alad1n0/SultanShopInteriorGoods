@@ -1,60 +1,54 @@
-@import '../../styles/scss/mixine-font';
-@import '../../styles/scss/variables';
-
-
-@mixin font-family($font-family) {
-  font-family: $font-family;
+.std {
+  line-height: 1.6;
 }
 
-@mixin font-size($font-size) {
-  font-size: $font-size;
+.page-title {
+  margin-bottom: 20px;
 }
 
-@mixin font-weight($font-weight) {
-  font-weight: $font-weight;
+.page-title h1 {
+  font-size: 24px;
+  color: #333;
 }
 
-@mixin font-style($font-style) {
-  font-style: $font-style;
+#about_us {
+  margin-top: 20px;
 }
 
-@mixin text-align($text-align) {
-  text-align: $text-align;
+#about_us p {
+  margin-bottom: 10px;
 }
 
-@mixin text-transform($text-transform) {
-  text-transform: $text-transform;
+#about_us section {
+  margin-top: 20px;
 }
 
-@mixin text-decoration($text-decoration) {
-  text-decoration: $text-decoration;
+#about_us h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-$primary-color: #000000;
-$secondary-color: #ffffff;
-$accent-color: #ff0000;
+.vert-line {
+  display: flex;
+}
 
-$font-family-base: Arial, sans-serif;
-$font-size-base: 16px;
-$font-weight-base: normal;
-$font-style-base: normal;
+.line-top {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
 
-$text-align-base: left;
-$text-transform-base: none;
-$text-decoration-base: none;
+.h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
 
-.about {
-  @include font-family($font-family-base);
-  @include font-size($font-size-base);
-  @include font-weight($font-weight-base);
-  @include font-style($font-style-base);
+.margin-left {
+  margin-left: 20px;
+}
 
-  h1 {
-    @include font-size(24px);
-    @include font-weight(bold);
-  }
-
-  p {
-    @include text-align(justify);
-  }
+.long-road div {
+  margin-bottom: 10px;
 }

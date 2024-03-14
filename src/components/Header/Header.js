@@ -14,142 +14,137 @@ function Header(props) {
   }
 
   return (
-    <div className="header">
-      <div className="header__info">
-        <div className="header__contacts">
-          <div className="header__adress header__common">
-            <div className="header__common-icon header__common-icon_type_adress"></div>
-            <div className="header__common-container">
-              <p className="header__common-text">
+    <div className="headers">
+      <div className="headers__info">
+        <div className="headers__contacts">
+          <div className="headers__adress headers__common">
+            <div className="headers__common-icon headers__common-icon_type_adress"></div>
+            <div className="headers__common-container">
+              <p className="headers__common-text">
                 г&#46;&nbsp;Кокчетав,&nbsp;вул&#46;&nbsp;Ж&#46;&nbsp;Ташенова&nbsp;129Б{' '}
               </p>
-              <p className="header__common-additionalText">
+              <p className="headers__common-additionalText">
                 &#40;Ринок&nbsp;Східний&#41;
               </p>
             </div>
           </div>
 
-          <div className="header__mail header__common">
-            <div className="header__common-icon header__common-icon_type_mail"></div>
+          <div className="headers__mail headers__common">
+            <div className="headers__common-icon headers__common-icon_type_mail"></div>
 
-            <div className="header__common-container">
-              <p className="header__common-text">
+            <div className="headers__common-container">
+              <p className="headers__common-text">
                 opt&#46;sultan&#64;gmail&#46;com
               </p>
-              <p className="header__common-additionalText">
+              <p className="headers__common-additionalText">
                 На&nbsp;зв'язку&nbsp;в&nbsp;будь-який&nbsp;час
               </p>
             </div>
           </div>
 
-          <div className="header__callback-text header__common header__callback-text_adaptive">
-            <div className="header__common-icon header__common-icon_type_callback"></div>
+          <div className="headers__callback-text headers__common headers__callback-text_adaptive">
+            <div className="headers__common-icon headers__common-icon_type_callback"></div>
 
-            <div className="header__common-container">
-              <p className="header__common-text">Відділ продажу</p>
-              <p className="header__callback-additionalText header__common-additionalText">
+            <div className="headers__common-container">
+              <p className="headers__common-text">Відділ продажу</p>
+              <p className="headers__callback-additionalText headers__common-additionalText">
                 &#43;380&nbsp;&#40;777&#41;&nbsp;490&#8209;00&#8209;91
               </p>
-              <p className="header__callback-additionalText header__common-additionalText">
+              <p className="headers__callback-additionalText headers__common-additionalText">
                 час&nbsp;роботи&#58;&nbsp;9&#58;00&#8209;20&#58;00
               </p>
             </div>
           </div>
-          <div className="header__callback-container">
+          <div className="headers__callback-container">
             {' '}
-            <div className="header__callback-icon"></div>
-            <button className="header__callback-btn">Замовити дзвінок</button>
+            <div className="headers__callback-icon"></div>
+            <button className="headers__callback-btn">Замовити дзвінок</button>
           </div>
         </div>
 
-        <nav className="header__menu">
-          <h2 className="header__menu-title">Меню&nbsp;сайта&#58;</h2>
-          <ul className="header__menu-items">
-            <li className="header__menu-item">
-              <a href="/#" target="_blank" className="header__menu-item-link">
+        <nav className="headers__menu">
+          <h2 className="headers__menu-title">Меню&nbsp;сайта&#58;</h2>
+          <ul className="headers__menu-items">
+            <li className="headers__menu-item">
+              <Link to="/about" className="headers__menu-item-link">
                 Про компанії
-              </a>
+              </Link>
             </li>
-            <li className="header__menu-item">
-              <a href="/#" target="_blank" className="header__menu-item-link">
+            <li className="headers__menu-item">
+              <Link to="/delivery" className="headers__menu-item-link">
                 Доставка і оплата
-              </a>
+              </Link>
             </li>
-            <li className="header__menu-item">
-              <a href="/#" target="_blank" className="header__menu-item-link">
-                Повернення
-              </a>
-            </li>
-            <li className="header__menu-item">
-              <a href="/#" target="_blank" className="header__menu-item-link">
+            <li className="headers__menu-item">
+              <Link to="/contact" className="headers__menu-item-link">
                 Контакти
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
 
-      <div className="header__interaction">
-        <div className="header__logo"></div>
+      <div className="headers__interaction">
+        <div className="headers__logo"></div>
         <Link
           to="/"
           onClick={updateProductsHandler}
-          className="header__catalog"
+          className="headers__catalog"
         >
-          Каталог <div className="header__catalog-icon"></div>{' '}
+          Каталог <div className="headers__catalog-icon"></div>{' '}
         </Link>
 
-        <div className="header__search">
+        <div className="headers__search">
           <input
             type="search"
-            className="header__search-input"
+            className="headers__search-input"
             placeholder="Пошук..."
           ></input>
-          <button className="header__search-btn"></button>
+          <button className="headers__search-btn"></button>
         </div>
 
-        <div className="header__callback">
-          <div className="header__callback-text header__common">
-            <div className="header__common-icon header__common-icon_type_callback"></div>
+        <div className="headers__callback">
+          <div className="headers__callback-text headers__common">
+            <div className="headers__common-icon headers__common-icon_type_callback"></div>
 
-            <div className="header__common-container">
-              <p className="header__common-text">
+            <div className="headers__common-container">
+              <p className="headers__common-text">
                 &#43;380&nbsp;&#40;777&#41;&nbsp;490&#8209;00&#8209;91
               </p>
-              <p className="header__callback-additionalText header__common-additionalText">
+              <p className="headers__callback-additionalText headers__common-additionalText">
                 час&nbsp;роботи&#58;&nbsp;9&#58;00&#8209;20&#58;00
               </p>
-              <button className="header__callback-btn">Замовити дзвінок</button>
+              <button className="headers__callback-btn">Замовити дзвінок</button>
             </div>
           </div>
 
-          <div className="header__callback-img">
-            <div className="header__callback-ellipse"></div>
+          <div className="headers__callback-img">
+            <div className="headers__callback-ellipse"></div>
           </div>
         </div>
 
-        <div className="header__priceList">
+        <div className="headers__priceList">
           {' '}
-          <a href="/#" target="_blank" className="header__priceList-btn">
+          <a href="/#" target="_blank" className="headers__priceList-btn">
             Прайс лист
-            <div className="header__priceList-icon"></div>
+            <div className="headers__priceList-icon"></div>
           </a>
         </div>
 
-        <div className="header__basket">
-          <Link to="/cart" className="header__basket-icon">
+        <div className="headers__basket">
+          <Link to="/cart" className="headers__basket-icon">
             <span
-              className={`header__basket-count ${
-                props.count === 0 && 'header__basket_empty'
+              className={`headers__basket-count ${
+                props.count === 0 && 'headers__basket_empty'
               }`}
             >
               {props.count}
             </span>
           </Link>
 
-          <div className="header__basket-text">
-            <p className="header__basket-title">Кошик</p>
-            <p className="header__basket-price">
+          <div className="headers__basket-text">
+            <p className="headers__basket-title">Кошик</p>
+            <p className="headers__basket-price">
               {props.cartPrice}&#8372;
             </p>
           </div>
@@ -157,26 +152,26 @@ function Header(props) {
       </div>
 
       <div
-        className={`header__adaptive ${
-          isBurgerMenuOpen && 'header__adaptive_open'
+        className={`headers__adaptive ${
+          isBurgerMenuOpen && 'headers__adaptive_open'
         }`}
       >
-        <div className="header__adaptive-container">
+        <div className="headers__adaptive-container">
           <div
             data-testid="burger-btn"
-            className={`header__burger-icon ${
+            className={`headers__burger-icon ${
               isBurgerMenuOpen
-                ? 'header__burger-icon_type_open'
-                : 'header__burger-icon_type_close'
+                ? 'headers__burger-icon_type_open'
+                : 'headers__burger-icon_type_close'
             }`}
             onClick={openBurgerMenu}
           ></div>
-          <div className="header__logo"></div>
+          <div className="headers__logo"></div>
 
-          <Link to="/cart" className="header__basket-icon">
+          <Link to="/cart" className="headers__basket-icon">
             <span
-              className={`header__basket-count ${
-                props.count === 0 && 'header__basket_empty'
+              className={`headers__basket-count ${
+                props.count === 0 && 'headers__basket_empty'
               }`}
             >
               {props.count}
@@ -184,21 +179,21 @@ function Header(props) {
           </Link>
         </div>
 
-        <div className="header__adaptive-container header__adaptive-content">
+        <div className="headers__adaptive-container headers__adaptive-content">
           <Link
             to="/"
             onClick={updateProductsHandler}
-            className="header__catalog"
+            className="headers__catalog"
           >
-            <div className="header__catalog-icon"></div>
+            <div className="headers__catalog-icon"></div>
             Каталог
           </Link>
-          <div className="header__adaptive-line"></div>
-          <div className="header__search">
-            <button type="submit" className="header__search-btn"></button>
+          <div className="headers__adaptive-line"></div>
+          <div className="headers__search">
+            <button type="submit" className="headers__search-btn"></button>
             <input
               type="search"
-              className="header__search-input"
+              className="headers__search-input"
               placeholder="Пошук"
             ></input>
           </div>
@@ -207,87 +202,87 @@ function Header(props) {
 
       <div
         data-testid="burger"
-        className={`header__burger ${
-          isBurgerMenuOpen && 'header__burger_open'
+        className={`headers__burger ${
+          isBurgerMenuOpen && 'headers__burger_open'
         }`}
       >
-        <div className="header__burger-container">
+        <div className="headers__burger-container">
           {' '}
-          <div className="header__contacts">
-            <div className="header__adress header__common">
-              <div className="header__common-icon header__common-icon_type_adress"></div>
-              <div className="header__common-container">
-                <p className="header__common-text">
+          <div className="headers__contacts">
+            <div className="headers__adress headers__common">
+              <div className="headers__common-icon headers__common-icon_type_adress"></div>
+              <div className="headers__common-container">
+                <p className="headers__common-text">
                   г&#46;&nbsp;Кокчетав,&nbsp;вул&#46;&nbsp;Ж&#46;&nbsp;Ташенова&nbsp;129Б{' '}
                 </p>
-                <p className="header__common-additionalText">
+                <p className="headers__common-additionalText">
                   &#40;Ринок&nbsp;Східний&#41;
                 </p>
               </div>
             </div>
 
-            <div className="header__mail header__common">
-              <div className="header__common-icon header__common-icon_type_mail"></div>
+            <div className="headers__mail headers__common">
+              <div className="headers__common-icon headers__common-icon_type_mail"></div>
 
-              <div className="header__common-container">
-                <p className="header__common-text">
+              <div className="headers__common-container">
+                <p className="headers__common-text">
                   opt&#46;sultan&#64;gmail&#46;com
                 </p>
-                <p className="header__common-additionalText">
+                <p className="headers__common-additionalText">
                   На&nbsp;зв'язку&nbsp;в&nbsp;будь-який&nbsp;час
                 </p>
               </div>
             </div>
 
-            <div className="header__callback-text header__common header__callback-text_adaptive">
-              <div className="header__common-icon header__common-icon_type_callback"></div>
+            <div className="headers__callback-text headers__common headers__callback-text_adaptive">
+              <div className="headers__common-icon headers__common-icon_type_callback"></div>
 
-              <div className="header__common-container">
-                <p className="header__common-text">Відділ продажу</p>
-                <p className="header__callback-additionalText header__common-additionalText">
+              <div className="headers__common-container">
+                <p className="headers__common-text">Відділ продажу</p>
+                <p className="headers__callback-additionalText headers__common-additionalText">
                   &#43;380&nbsp;&#40;777&#41;&nbsp;490&#8209;00&#8209;91
                 </p>
-                <p className="header__callback-additionalText header__common-additionalText">
+                <p className="headers__callback-additionalText headers__common-additionalText">
                   час&nbsp;роботи&#58;&nbsp;9&#58;00&#8209;20&#58;00
                 </p>
               </div>
             </div>
-            <div className="header__callback-container">
+            <div className="headers__callback-container">
               {' '}
-              <div className="header__callback-icon"></div>
-              <button className="header__callback-btn">Замовити дзвінок</button>
+              <div className="headers__callback-icon"></div>
+              <button className="headers__callback-btn">Замовити дзвінок</button>
             </div>
           </div>
-          <nav className="header__menu">
-            <h2 className="header__menu-title">Меню сайту&#58;</h2>
-            <ul className="header__menu-items">
-              <li className="header__menu-item">
-                <a href="/#" target="_blank" className="header__menu-item-link">
+          <nav className="headers__menu">
+            <h2 className="headers__menu-title">Меню сайту&#58;</h2>
+            <ul className="headers__menu-items">
+              <li className="headers__menu-item">
+                <a href="/#" target="_blank" className="headers__menu-item-link">
                   Про компанії
                 </a>
               </li>
-              <li className="header__menu-item">
-                <a href="/#" target="_blank" className="header__menu-item-link">
+              <li className="headers__menu-item">
+                <a href="/#" target="_blank" className="headers__menu-item-link">
                   Доставка і оплата
                 </a>
               </li>
-              <li className="header__menu-item">
-                <a href="/#" target="_blank" className="header__menu-item-link">
+              <li className="headers__menu-item">
+                <a href="/#" target="_blank" className="headers__menu-item-link">
                   Повернення
                 </a>
               </li>
-              <li className="header__menu-item">
-                <a href="/#" target="_blank" className="header__menu-item-link">
+              <li className="headers__menu-item">
+                <a href="/#" target="_blank" className="headers__menu-item-link">
                   Контакти
                 </a>
               </li>
             </ul>
           </nav>
-          <div className="header__priceList">
+          <div className="headers__priceList">
             {' '}
-            <a href="/#" target="_blank" className="header__priceList-btn">
+            <a href="/#" target="_blank" className="headers__priceList-btn">
               Прайс лист
-              <div className="header__priceList-icon"></div>
+              <div className="headers__priceList-icon"></div>
             </a>
           </div>
         </div>
