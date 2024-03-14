@@ -1,0 +1,60 @@
+@import '../../styles/scss/mixine-font';
+@import '../../styles/scss/variables';
+
+
+@mixin font-family($font-family) {
+  font-family: $font-family;
+}
+
+@mixin font-size($font-size) {
+  font-size: $font-size;
+}
+
+@mixin font-weight($font-weight) {
+  font-weight: $font-weight;
+}
+
+@mixin font-style($font-style) {
+  font-style: $font-style;
+}
+
+@mixin text-align($text-align) {
+  text-align: $text-align;
+}
+
+@mixin text-transform($text-transform) {
+  text-transform: $text-transform;
+}
+
+@mixin text-decoration($text-decoration) {
+  text-decoration: $text-decoration;
+}
+
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$accent-color: #ff0000;
+
+$font-family-base: Arial, sans-serif;
+$font-size-base: 16px;
+$font-weight-base: normal;
+$font-style-base: normal;
+
+$text-align-base: left;
+$text-transform-base: none;
+$text-decoration-base: none;
+
+.about {
+  @include font-family($font-family-base);
+  @include font-size($font-size-base);
+  @include font-weight($font-weight-base);
+  @include font-style($font-style-base);
+
+  h1 {
+    @include font-size(24px);
+    @include font-weight(bold);
+  }
+
+  p {
+    @include text-align(justify);
+  }
+}
